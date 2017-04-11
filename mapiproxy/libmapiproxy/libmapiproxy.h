@@ -177,7 +177,7 @@ static const uint8_t GUID_NSPI[] = {
 
 __BEGIN_DECLS
 
-#if SAMBA_VERSION_MAJOR == 4 && SAMBA_VERSION_MINOR < 2
+#if !defined(_SAMBA_UTIL_H_) || (SAMBA_VERSION_MAJOR == 4 && SAMBA_VERSION_MINOR < 2)
 /* Compatibility with samba 4.1 */
 struct server_id_buf { char buf[48]; };
 char *server_id_str_buf(struct server_id id, struct server_id_buf *dst);
